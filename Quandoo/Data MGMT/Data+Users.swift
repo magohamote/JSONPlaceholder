@@ -1,5 +1,5 @@
 //
-//  AlamofireExtension.swift
+//  Data+Users.swift
 //  Quandoo
 //
 //  Created by Rolland Cédric on 14.11.17.

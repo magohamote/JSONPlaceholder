@@ -19,6 +19,7 @@ class UserListViewController: UITableViewController {
         self.title = "Users"
         self.navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x25ac72)
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.tintColor = .white
         downloadUsers()
     }
 
@@ -57,6 +58,12 @@ class UserListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "PostListViewController") as? PostListViewController {
+            let user = usersArray[indexPath.row]
+            vc.username = user.username
+            vc.userId = user.id
+            self.navigationController?.pushViewController(vc, animated: true)
+            self.tableView.deselectRow(at: indexPath, animated: true)
+        }
     }
 }

@@ -24,8 +24,12 @@
 		FC31C7C41FBB1D7200412BD9 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC31C7BF1FBB1D5E00412BD9 /* Roboto-Light.ttf */; };
 		FC31C7C51FBB1D7200412BD9 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC31C7C01FBB1D5E00412BD9 /* Roboto-Regular.ttf */; };
 		FC31C7C71FBB1EB100412BD9 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C7C61FBB1EB100412BD9 /* UserCell.swift */; };
-		FC31C7CA1FBB215600412BD9 /* AlamofireExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C7C91FBB215600412BD9 /* AlamofireExtension.swift */; };
-		FC31C7CC1FBB2AF800412BD9 /* HexColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C7CB1FBB2AF800412BD9 /* HexColors.swift */; };
+		FC31C7CA1FBB215600412BD9 /* Data+Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C7C91FBB215600412BD9 /* Data+Users.swift */; };
+		FC31C7CC1FBB2AF800412BD9 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C7CB1FBB2AF800412BD9 /* UIColor+Hex.swift */; };
+		FC31C7CE1FBB2F6500412BD9 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC31C7CD1FBB2F5600412BD9 /* Roboto-Medium.ttf */; };
+		FC31C7D01FBB335700412BD9 /* Data+Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C7CF1FBB335700412BD9 /* Data+Posts.swift */; };
+		FC31C7D21FBB347000412BD9 /* Label+Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C7D11FBB347000412BD9 /* Label+Height.swift */; };
+		FC31C7D41FBB367C00412BD9 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C7D31FBB367C00412BD9 /* PostCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,8 +54,12 @@
 		FC31C7C01FBB1D5E00412BD9 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		FC31C7C11FBB1D5F00412BD9 /* Roboto-BoldCondensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldCondensed.ttf"; sourceTree = "<group>"; };
 		FC31C7C61FBB1EB100412BD9 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
-		FC31C7C91FBB215600412BD9 /* AlamofireExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireExtension.swift; sourceTree = "<group>"; };
-		FC31C7CB1FBB2AF800412BD9 /* HexColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColors.swift; sourceTree = "<group>"; };
+		FC31C7C91FBB215600412BD9 /* Data+Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Users.swift"; sourceTree = "<group>"; };
+		FC31C7CB1FBB2AF800412BD9 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		FC31C7CD1FBB2F5600412BD9 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		FC31C7CF1FBB335700412BD9 /* Data+Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Posts.swift"; sourceTree = "<group>"; };
+		FC31C7D11FBB347000412BD9 /* Label+Height.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Label+Height.swift"; sourceTree = "<group>"; };
+		FC31C7D31FBB367C00412BD9 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +130,7 @@
 				FC31C79C1FBAFB0C00412BD9 /* UserListViewController.swift */,
 				FC31C7AD1FBB072E00412BD9 /* PostListViewController.swift */,
 				FC31C7C61FBB1EB100412BD9 /* UserCell.swift */,
+				FC31C7D31FBB367C00412BD9 /* PostCell.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -159,7 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				FC31C7B91FBB172400412BD9 /* Errors.swift */,
-				FC31C7CB1FBB2AF800412BD9 /* HexColors.swift */,
+				FC31C7CB1FBB2AF800412BD9 /* UIColor+Hex.swift */,
+				FC31C7D11FBB347000412BD9 /* Label+Height.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -171,6 +181,7 @@
 				FC31C7C11FBB1D5F00412BD9 /* Roboto-BoldCondensed.ttf */,
 				FC31C7BF1FBB1D5E00412BD9 /* Roboto-Light.ttf */,
 				FC31C7C01FBB1D5E00412BD9 /* Roboto-Regular.ttf */,
+				FC31C7CD1FBB2F5600412BD9 /* Roboto-Medium.ttf */,
 			);
 			path = fonts;
 			sourceTree = "<group>";
@@ -178,7 +189,8 @@
 		FC31C7C81FBB212200412BD9 /* Data MGMT */ = {
 			isa = PBXGroup;
 			children = (
-				FC31C7C91FBB215600412BD9 /* AlamofireExtension.swift */,
+				FC31C7C91FBB215600412BD9 /* Data+Users.swift */,
+				FC31C7CF1FBB335700412BD9 /* Data+Posts.swift */,
 			);
 			path = "Data MGMT";
 			sourceTree = "<group>";
@@ -245,6 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC31C7CE1FBB2F6500412BD9 /* Roboto-Medium.ttf in Resources */,
 				FC31C7C21FBB1D7200412BD9 /* Roboto-Bold.ttf in Resources */,
 				FC31C7C31FBB1D7200412BD9 /* Roboto-BoldCondensed.ttf in Resources */,
 				FC31C7C41FBB1D7200412BD9 /* Roboto-Light.ttf in Resources */,
@@ -317,16 +330,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC31C7B71FBB158600412BD9 /* Address.swift in Sources */,
+				FC31C7D01FBB335700412BD9 /* Data+Posts.swift in Sources */,
 				FC31C7B11FBB074C00412BD9 /* User.swift in Sources */,
 				FC31C79D1FBAFB0C00412BD9 /* UserListViewController.swift in Sources */,
 				FC31C7AE1FBB072E00412BD9 /* PostListViewController.swift in Sources */,
 				FC31C79B1FBAFB0C00412BD9 /* AppDelegate.swift in Sources */,
-				FC31C7CC1FBB2AF800412BD9 /* HexColors.swift in Sources */,
+				FC31C7CC1FBB2AF800412BD9 /* UIColor+Hex.swift in Sources */,
+				FC31C7D41FBB367C00412BD9 /* PostCell.swift in Sources */,
 				FC31C7C71FBB1EB100412BD9 /* UserCell.swift in Sources */,
-				FC31C7CA1FBB215600412BD9 /* AlamofireExtension.swift in Sources */,
+				FC31C7CA1FBB215600412BD9 /* Data+Users.swift in Sources */,
 				FC31C7B31FBB075F00412BD9 /* Post.swift in Sources */,
 				FC31C7BA1FBB172400412BD9 /* Errors.swift in Sources */,
 				FC31C7BC1FBB1A6800412BD9 /* Company.swift in Sources */,
+				FC31C7D21FBB347000412BD9 /* Label+Height.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

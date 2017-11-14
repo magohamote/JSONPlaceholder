@@ -1,5 +1,5 @@
 //
-//  HexColors.swift
+//  UIColor+Hex.swift
 //  Quandoo
 //
 //  Created by Rolland Cédric on 14.11.17.
