@@ -10,7 +10,8 @@ import UIKit
 
 class UserListViewController: UITableViewController {
 
-    var usersArray:[User] = []
+    private var usersArray:[User] = []
+    private var loadingView:UIView!
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -20,11 +21,18 @@ class UserListViewController: UITableViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x25ac72)
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.tintColor = .white
+        
+        self.tableView.refreshControl = UIRefreshControl()
+        self.tableView.refreshControl?.addTarget(self, action: #selector(downloadUsers), for: .valueChanged)
+        self.tableView.refreshControl?.tintColor = UIColor(rgb: 0x25ac72)
+        self.tableView.separatorColor = .clear
+        
+        showLoadingView()
         downloadUsers()
     }
 
     // MARK: - Data MGMT
-    private func downloadUsers() {
+    @objc private func downloadUsers() {
         Requests.shared().downloadUsers(completion: { users, error in
             if let users = users {
                 for user in users {
@@ -41,6 +49,7 @@ class UserListViewController: UITableViewController {
                 print("Error: \(error!)")
                 self.showError()
             }
+            self.hideLoadingView()
         })
     }
     
@@ -76,5 +85,26 @@ class UserListViewController: UITableViewController {
         
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func showLoadingView() {
+        loadingView = UIView(frame: self.view.bounds)
+        loadingView.backgroundColor = .black
+        loadingView.alpha = 0.7
+        
+        let loadingIndicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
+        loadingIndicator.center = loadingView.center
+        loadingIndicator.isHidden = false
+        loadingIndicator.startAnimating()
+        
+        loadingView.addSubview(loadingIndicator)
+        
+        self.view.addSubview(loadingView)
+    }
+    
+    func hideLoadingView() {
+        tableView.separatorColor = UIColor(rgb: 0x25ac72)
+        self.tableView.refreshControl?.endRefreshing()
+        self.loadingView.removeFromSuperview()
     }
 }

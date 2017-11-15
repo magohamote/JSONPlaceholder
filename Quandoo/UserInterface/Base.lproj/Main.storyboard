@@ -24,6 +24,7 @@
         <!--User List View Controller-->
         <scene sceneID="e73-vf-qIS">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oiN-Jk-F7f" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="UserListViewController" id="qTp-N1-ypn" customClass="UserListViewController" customModule="Quandoo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yLf-vG-uGg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -103,7 +104,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="6Cx-iW-zRO"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oiN-Jk-F7f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-7.2000000000000002" y="111.99400299850076"/>
         </scene>
@@ -178,6 +178,7 @@
         <!--Navigation Controller-->
         <scene sceneID="cyV-75-0AP">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NSM-iX-iR4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="D1e-cc-vs1" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VBJ-Vk-1wf">
@@ -189,7 +190,6 @@
                         <segue destination="qTp-N1-ypn" kind="relationship" relationship="rootViewController" id="nDM-pf-Cg8"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NSM-iX-iR4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-772" y="114"/>
         </scene>
