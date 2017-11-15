@@ -10,7 +10,7 @@ import UIKit
 
 class UserListViewController: UITableViewController {
 
-    private var usersArray:[User] = []
+    var usersArray:[User] = []
     private var loadingView:UIView!
     
     // MARK: - Life cycle
@@ -22,9 +22,11 @@ class UserListViewController: UITableViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.tintColor = .white
         
-        self.tableView.refreshControl = UIRefreshControl()
-        self.tableView.refreshControl?.addTarget(self, action: #selector(downloadUsers), for: .valueChanged)
-        self.tableView.refreshControl?.tintColor = UIColor(rgb: 0x25ac72)
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.addTarget(self, action: #selector(downloadUsers), for: .valueChanged)
+        self.refreshControl?.tintColor = UIColor(rgb: 0x25ac72)
+        self.refreshControl?.backgroundColor = .white
+        
         self.tableView.separatorColor = .clear
         
         showLoadingView()
@@ -35,6 +37,7 @@ class UserListViewController: UITableViewController {
     @objc private func downloadUsers() {
         Requests.shared().downloadUsers(completion: { users, error in
             if let users = users {
+                self.usersArray.removeAll()
                 for user in users {
                     do {
                         try self.usersArray.append(User(json: user))
@@ -43,7 +46,6 @@ class UserListViewController: UITableViewController {
                         self.showError()
                     }
                 }
-                
                 self.tableView.reloadData()
             } else {
                 print("Error: \(error!)")
@@ -104,7 +106,7 @@ class UserListViewController: UITableViewController {
     
     func hideLoadingView() {
         tableView.separatorColor = UIColor(rgb: 0x25ac72)
-        self.tableView.refreshControl?.endRefreshing()
+        self.refreshControl?.endRefreshing()
         self.loadingView.removeFromSuperview()
     }
 }
