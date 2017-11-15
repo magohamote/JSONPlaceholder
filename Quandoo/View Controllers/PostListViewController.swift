@@ -28,12 +28,10 @@ class PostListViewController: UITableViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x25ac72)
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
 
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 151
+        
         downloadUsersPost()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Data MGMT
@@ -41,12 +39,22 @@ class PostListViewController: UITableViewController {
         guard let userId = self.userId else {
             return
         }
-        downloadUsersPosts(userId: userId, completion: { posts in
-            for post in posts {
-                self.postsArray.append(Post(json: post))
+        
+        Requests.shared().downloadUsersPosts(userId: userId, completion: { posts, error in
+            if let posts = posts {
+                for post in posts {
+                    do {
+                        try self.postsArray.append(Post(json: post))
+                    } catch {
+                        print("An error occured while downloading posts")
+                        self.showError()
+                    }
+                }
+                
+                self.tableView.reloadData()
+            } else {
+                print(error!)
             }
-            
-            self.tableView.reloadData()
         })
     }
     
@@ -58,9 +66,22 @@ class PostListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "postCell") as? PostCell {
             let post = postsArray[indexPath.row]
+            
             cell.config(title: post.title, body: post.body)
+            
+            cell.layoutIfNeeded()
+            
             return cell
         }
         return UITableViewCell()
+    }
+    
+    // MARK: - Errors
+    func showError() {
+        let alertController = UIAlertController(title: "Error", message: "An error occured while downloading posts", preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+        
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }

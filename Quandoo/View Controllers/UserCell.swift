@@ -15,15 +15,10 @@ class UserCell: UITableViewCell {
     @IBOutlet var emailLabel: UILabel!
     @IBOutlet var addressLabel: UILabel!
     
-    func config(name: String?, username: String?, email: String?, address: Address?) {
+    func config(name: String, username: String, email: String, address: Address) {
         self.nameLabel.text = name
         self.usernameLabel.text = username
         self.emailLabel.text = email
-        if let address = address, let street = address.street, let suite = address.suite, let zipcode = address.zipcode, let city = address.city {
-            self.addressLabel.text = "\(street), \(suite)\n\(zipcode) \(city)"
-        } else {
-            self.addressLabel.text = "error"
-        }
+        self.addressLabel.text = "\(address.street), \(address.suite)\n\(address.zipcode) \(address.city)"
     }
-    
 }

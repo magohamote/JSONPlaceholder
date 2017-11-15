@@ -23,22 +23,24 @@ class UserListViewController: UITableViewController {
         downloadUsers()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     // MARK: - Data MGMT
-    func downloadUsers() {
-        downloadUsers(completion: { users in
-            for user in users {
-                do {
-                    try self.usersArray.append(User(json: user))
-                } catch {
-                    print("An error occured while downloading users")
+    private func downloadUsers() {
+        Requests.shared().downloadUsers(completion: { users, error in
+            if let users = users {
+                for user in users {
+                    do {
+                        try self.usersArray.append(User(json: user))
+                    } catch {
+                        print("An error occured while downloading users")
+                        self.showError()
+                    }
                 }
+                
+                self.tableView.reloadData()
+            } else {
+                print("Error: \(error!)")
+                self.showError()
             }
-            
-            self.tableView.reloadData()
         })
     }
     
@@ -65,5 +67,14 @@ class UserListViewController: UITableViewController {
             self.navigationController?.pushViewController(vc, animated: true)
             self.tableView.deselectRow(at: indexPath, animated: true)
         }
+    }
+    
+    // MARK: - Errors
+    func showError() {
+        let alertController = UIAlertController(title: "Error", message: "An error occured while downloading users", preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+        
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }

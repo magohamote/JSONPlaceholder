@@ -19,22 +19,25 @@ struct Geo {
 }
 
 class Address: NSObject {
-    var street: String?
-    var suite: String?
-    var city: String?
-    var zipcode: String?
+    var street: String
+    var suite: String
+    var city: String
+    var zipcode: String
     var geo: Geo?
     
     init(json: [String : Any]?) throws {
-        self.street = json?["street"] as? String
-        self.suite = json?["suite"] as? String
-        self.city = json?["city"] as? String
-        self.zipcode = json?["zipcode"] as? String
-        
-        guard let geo = json?["geo"] as? [String: Any]? else {
+        if let street = json?["street"] as? String,
+           let suite = json?["suite"] as? String,
+           let city = json?["city"] as? String,
+           let zipcode = json?["zipcode"] as? String {
+            self.street = street
+            self.suite = suite
+            self.city = city
+            self.zipcode = zipcode
+        } else {
             throw FormatError.badFormatError
         }
         
-        self.geo = Geo(json: geo)
+        self.geo = Geo(json: json?["geo"] as? [String: Any])
     }
 }

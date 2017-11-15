@@ -15,11 +15,16 @@ class PostCell: UITableViewCell {
     @IBOutlet var titleHeightConstraint: NSLayoutConstraint!
     @IBOutlet var bodyHeightConstraint: NSLayoutConstraint!
     
-    func config(title: String?, body: String?) {
+    func config(title: String, body: String) {
         self.titleLabel.text = title
         self.bodyLabel.text = body
         self.titleHeightConstraint.constant = titleLabel.retrieveTextHeight()
         self.bodyHeightConstraint.constant = bodyLabel.retrieveTextHeight()
+    }
+    
+    override func prepareForReuse() {
+        self.titleHeightConstraint.constant = 23
+        self.bodyHeightConstraint.constant = 100
     }
 }
 

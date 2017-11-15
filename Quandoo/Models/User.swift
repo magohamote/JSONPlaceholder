@@ -9,28 +9,32 @@
 import Foundation
 
 class User: NSObject {
-    var id: Int?
-    var name: String?
-    var username: String?
-    var email: String?
-    var address: Address?
+    var id: Int
+    var name: String
+    var username: String
+    var email: String
+    var address: Address
     var phone: String?
     var website: String?
     var company: Company?
     
     init(json: [String : Any]?) throws {
-        self.id = json?["id"] as? Int
-        self.name = json?["name"] as? String
-        self.username = json?["username"] as? String
-        self.email = json?["email"] as? String
-        self.phone = json?["phone"] as? String
-        self.website = json?["website"] as? String
-        
-        guard let address = json?["address"] as? [String: Any]?, let company = json?["company"] as? [String: Any]? else {
+        if let id = json?["id"] as? Int,
+           let name = json?["name"] as? String,
+           let username = json?["username"] as? String,
+           let email = json?["email"] as? String,
+           let address = json?["address"] as? [String: Any] {
+            self.id = id
+            self.name = name
+            self.username = username
+            self.email = email
+            try self.address = Address(json: address)
+        } else {
             throw FormatError.badFormatError
         }
         
-        try self.address = Address(json: address)
-        self.company = Company(json: company)
+        self.phone = json?["phone"] as? String
+        self.website = json?["website"] as? String
+        self.company = Company(json: json?["company"] as? [String: Any])
     }
 }

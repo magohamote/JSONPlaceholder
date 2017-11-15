@@ -24,17 +24,46 @@
 		FC31C7C41FBB1D7200412BD9 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC31C7BF1FBB1D5E00412BD9 /* Roboto-Light.ttf */; };
 		FC31C7C51FBB1D7200412BD9 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC31C7C01FBB1D5E00412BD9 /* Roboto-Regular.ttf */; };
 		FC31C7C71FBB1EB100412BD9 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C7C61FBB1EB100412BD9 /* UserCell.swift */; };
-		FC31C7CA1FBB215600412BD9 /* Data+Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C7C91FBB215600412BD9 /* Data+Users.swift */; };
 		FC31C7CC1FBB2AF800412BD9 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C7CB1FBB2AF800412BD9 /* UIColor+Hex.swift */; };
 		FC31C7CE1FBB2F6500412BD9 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC31C7CD1FBB2F5600412BD9 /* Roboto-Medium.ttf */; };
-		FC31C7D01FBB335700412BD9 /* Data+Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C7CF1FBB335700412BD9 /* Data+Posts.swift */; };
 		FC31C7D21FBB347000412BD9 /* Label+Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C7D11FBB347000412BD9 /* Label+Height.swift */; };
 		FC31C7D41FBB367C00412BD9 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C7D31FBB367C00412BD9 /* PostCell.swift */; };
+		FC31C7DE1FBB462A00412BD9 /* QuandooUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C7DD1FBB462A00412BD9 /* QuandooUITests.swift */; };
+		FC31C7EC1FBB4D3900412BD9 /* QuandooTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C7EB1FBB4D3900412BD9 /* QuandooTests.swift */; };
+		FC31C7F91FBC5B3B00412BD9 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C7F81FBC5B3B00412BD9 /* Requests.swift */; };
+		FCED6C6B1FBCA7DE00CCBE18 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C7F31FBC4E1700412BD9 /* Request.swift */; };
+		FCED6C6C1FBCA7E500CCBE18 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = FC31C7FA1FBCA15A00412BD9 /* users.json */; };
+		FCED6C6D1FBCA7E500CCBE18 /* badUsersJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = FCED6C651FBCA65D00CCBE18 /* badUsersJSON.json */; };
+		FCED6C701FBCB12C00CCBE18 /* usersWithoutAddress.json in Resources */ = {isa = PBXBuildFile; fileRef = FCED6C6F1FBCB12C00CCBE18 /* usersWithoutAddress.json */; };
+		FCED6C721FBCB31600CCBE18 /* badPostsJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = FCED6C711FBCB31600CCBE18 /* badPostsJSON.json */; };
+		FCED6C741FBCB3CF00CCBE18 /* posts.json in Resources */ = {isa = PBXBuildFile; fileRef = FCED6C731FBCB3CF00CCBE18 /* posts.json */; };
+		FCED6C761FBCB67C00CCBE18 /* usersWithBadAddress.json in Resources */ = {isa = PBXBuildFile; fileRef = FCED6C751FBCB67C00CCBE18 /* usersWithBadAddress.json */; };
+		FED82D8953EFAAF06AB79B6D /* Pods_QuandooTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A895ABE2825CD45E3E54AE4E /* Pods_QuandooTests.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FC31C7E01FBB462A00412BD9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC31C78F1FBAFB0C00412BD9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC31C7961FBAFB0C00412BD9;
+			remoteInfo = Quandoo;
+		};
+		FC31C7EE1FBB4D3900412BD9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC31C78F1FBAFB0C00412BD9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC31C7961FBAFB0C00412BD9;
+			remoteInfo = Quandoo;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		349FF56BB4BF2456840E49F5 /* Pods-Quandoo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quandoo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Quandoo/Pods-Quandoo.debug.xcconfig"; sourceTree = "<group>"; };
+		5ADB7E8A9AE54710EC29FCC2 /* Pods-QuandooTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuandooTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuandooTests/Pods-QuandooTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7B31C3020EDA4ADB72131729 /* Pods-QuandooTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuandooTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuandooTests/Pods-QuandooTests.release.xcconfig"; sourceTree = "<group>"; };
 		7DD1A9E9D3E067B505F95847 /* Pods-Quandoo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quandoo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Quandoo/Pods-Quandoo.release.xcconfig"; sourceTree = "<group>"; };
+		A895ABE2825CD45E3E54AE4E /* Pods_QuandooTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuandooTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D35D343C4B2FD2C6AD14FE50 /* Pods_Quandoo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quandoo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC31C7971FBAFB0C00412BD9 /* Quandoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quandoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC31C79A1FBAFB0C00412BD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,12 +83,24 @@
 		FC31C7C01FBB1D5E00412BD9 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		FC31C7C11FBB1D5F00412BD9 /* Roboto-BoldCondensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldCondensed.ttf"; sourceTree = "<group>"; };
 		FC31C7C61FBB1EB100412BD9 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
-		FC31C7C91FBB215600412BD9 /* Data+Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Users.swift"; sourceTree = "<group>"; };
 		FC31C7CB1FBB2AF800412BD9 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		FC31C7CD1FBB2F5600412BD9 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
-		FC31C7CF1FBB335700412BD9 /* Data+Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Posts.swift"; sourceTree = "<group>"; };
 		FC31C7D11FBB347000412BD9 /* Label+Height.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Label+Height.swift"; sourceTree = "<group>"; };
 		FC31C7D31FBB367C00412BD9 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		FC31C7DB1FBB462A00412BD9 /* QuandooUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuandooUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC31C7DD1FBB462A00412BD9 /* QuandooUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuandooUITests.swift; sourceTree = "<group>"; };
+		FC31C7DF1FBB462A00412BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC31C7E91FBB4D3900412BD9 /* QuandooTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuandooTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC31C7EB1FBB4D3900412BD9 /* QuandooTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuandooTests.swift; sourceTree = "<group>"; };
+		FC31C7ED1FBB4D3900412BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC31C7F31FBC4E1700412BD9 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		FC31C7F81FBC5B3B00412BD9 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		FC31C7FA1FBCA15A00412BD9 /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
+		FCED6C651FBCA65D00CCBE18 /* badUsersJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = badUsersJSON.json; sourceTree = "<group>"; };
+		FCED6C6F1FBCB12C00CCBE18 /* usersWithoutAddress.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = usersWithoutAddress.json; sourceTree = "<group>"; };
+		FCED6C711FBCB31600CCBE18 /* badPostsJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = badPostsJSON.json; sourceTree = "<group>"; };
+		FCED6C731FBCB3CF00CCBE18 /* posts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = posts.json; sourceTree = "<group>"; };
+		FCED6C751FBCB67C00CCBE18 /* usersWithBadAddress.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = usersWithBadAddress.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +112,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FC31C7D81FBB462A00412BD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC31C7E61FBB4D3900412BD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FED82D8953EFAAF06AB79B6D /* Pods_QuandooTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -79,6 +135,8 @@
 			children = (
 				349FF56BB4BF2456840E49F5 /* Pods-Quandoo.debug.xcconfig */,
 				7DD1A9E9D3E067B505F95847 /* Pods-Quandoo.release.xcconfig */,
+				5ADB7E8A9AE54710EC29FCC2 /* Pods-QuandooTests.debug.xcconfig */,
+				7B31C3020EDA4ADB72131729 /* Pods-QuandooTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -87,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				D35D343C4B2FD2C6AD14FE50 /* Pods_Quandoo.framework */,
+				A895ABE2825CD45E3E54AE4E /* Pods_QuandooTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -95,6 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				FC31C7991FBAFB0C00412BD9 /* Quandoo */,
+				FC31C7DC1FBB462A00412BD9 /* QuandooUITests */,
+				FC31C7EA1FBB4D3900412BD9 /* QuandooTests */,
 				FC31C7981FBAFB0C00412BD9 /* Products */,
 				0788EA4F91737962AB73A3BC /* Pods */,
 				465498AC904C42795ED05999 /* Frameworks */,
@@ -105,6 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				FC31C7971FBAFB0C00412BD9 /* Quandoo.app */,
+				FC31C7DB1FBB462A00412BD9 /* QuandooUITests.xctest */,
+				FC31C7E91FBB4D3900412BD9 /* QuandooTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,10 +252,42 @@
 		FC31C7C81FBB212200412BD9 /* Data MGMT */ = {
 			isa = PBXGroup;
 			children = (
-				FC31C7C91FBB215600412BD9 /* Data+Users.swift */,
-				FC31C7CF1FBB335700412BD9 /* Data+Posts.swift */,
+				FC31C7F81FBC5B3B00412BD9 /* Requests.swift */,
 			);
 			path = "Data MGMT";
+			sourceTree = "<group>";
+		};
+		FC31C7DC1FBB462A00412BD9 /* QuandooUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FC31C7DD1FBB462A00412BD9 /* QuandooUITests.swift */,
+				FC31C7DF1FBB462A00412BD9 /* Info.plist */,
+			);
+			path = QuandooUITests;
+			sourceTree = "<group>";
+		};
+		FC31C7EA1FBB4D3900412BD9 /* QuandooTests */ = {
+			isa = PBXGroup;
+			children = (
+				FC31C7EB1FBB4D3900412BD9 /* QuandooTests.swift */,
+				FC31C7F31FBC4E1700412BD9 /* Request.swift */,
+				FC31C7ED1FBB4D3900412BD9 /* Info.plist */,
+				FC31C7F71FBC56D200412BD9 /* Resources */,
+			);
+			path = QuandooTests;
+			sourceTree = "<group>";
+		};
+		FC31C7F71FBC56D200412BD9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FC31C7FA1FBCA15A00412BD9 /* users.json */,
+				FCED6C731FBCB3CF00CCBE18 /* posts.json */,
+				FCED6C6F1FBCB12C00CCBE18 /* usersWithoutAddress.json */,
+				FCED6C751FBCB67C00CCBE18 /* usersWithBadAddress.json */,
+				FCED6C651FBCA65D00CCBE18 /* badUsersJSON.json */,
+				FCED6C711FBCB31600CCBE18 /* badPostsJSON.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +313,45 @@
 			productReference = FC31C7971FBAFB0C00412BD9 /* Quandoo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FC31C7DA1FBB462A00412BD9 /* QuandooUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC31C7E21FBB462A00412BD9 /* Build configuration list for PBXNativeTarget "QuandooUITests" */;
+			buildPhases = (
+				FC31C7D71FBB462A00412BD9 /* Sources */,
+				FC31C7D81FBB462A00412BD9 /* Frameworks */,
+				FC31C7D91FBB462A00412BD9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC31C7E11FBB462A00412BD9 /* PBXTargetDependency */,
+			);
+			name = QuandooUITests;
+			productName = QuandooUITests;
+			productReference = FC31C7DB1FBB462A00412BD9 /* QuandooUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		FC31C7E81FBB4D3900412BD9 /* QuandooTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC31C7F01FBB4D3900412BD9 /* Build configuration list for PBXNativeTarget "QuandooTests" */;
+			buildPhases = (
+				26DD0A690454E72941577119 /* [CP] Check Pods Manifest.lock */,
+				FC31C7E51FBB4D3900412BD9 /* Sources */,
+				FC31C7E61FBB4D3900412BD9 /* Frameworks */,
+				FC31C7E71FBB4D3900412BD9 /* Resources */,
+				DA77D4A1252559010D65166C /* [CP] Embed Pods Frameworks */,
+				771D0F6D9624B4B6B2D641BB /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC31C7EF1FBB4D3900412BD9 /* PBXTargetDependency */,
+			);
+			name = QuandooTests;
+			productName = QuandooTests;
+			productReference = FC31C7E91FBB4D3900412BD9 /* QuandooTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -231,6 +365,16 @@
 					FC31C7961FBAFB0C00412BD9 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+					};
+					FC31C7DA1FBB462A00412BD9 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FC31C7961FBAFB0C00412BD9;
+					};
+					FC31C7E81FBB4D3900412BD9 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FC31C7961FBAFB0C00412BD9;
 					};
 				};
 			};
@@ -248,6 +392,8 @@
 			projectRoot = "";
 			targets = (
 				FC31C7961FBAFB0C00412BD9 /* Quandoo */,
+				FC31C7DA1FBB462A00412BD9 /* QuandooUITests */,
+				FC31C7E81FBB4D3900412BD9 /* QuandooTests */,
 			);
 		};
 /* End PBXProject section */
@@ -265,6 +411,26 @@
 				FC31C7A51FBAFB0C00412BD9 /* LaunchScreen.storyboard in Resources */,
 				FC31C7A21FBAFB0C00412BD9 /* Assets.xcassets in Resources */,
 				FC31C7A01FBAFB0C00412BD9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC31C7D91FBB462A00412BD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC31C7E71FBB4D3900412BD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCED6C701FBCB12C00CCBE18 /* usersWithoutAddress.json in Resources */,
+				FCED6C741FBCB3CF00CCBE18 /* posts.json in Resources */,
+				FCED6C6D1FBCA7E500CCBE18 /* badUsersJSON.json in Resources */,
+				FCED6C6C1FBCA7E500CCBE18 /* users.json in Resources */,
+				FCED6C721FBCB31600CCBE18 /* badPostsJSON.json in Resources */,
+				FCED6C761FBCB67C00CCBE18 /* usersWithBadAddress.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +470,39 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Quandoo/Pods-Quandoo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		26DD0A690454E72941577119 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuandooTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		771D0F6D9624B4B6B2D641BB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuandooTests/Pods-QuandooTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		819354461866B25A0DF093CF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -322,6 +521,24 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Quandoo/Pods-Quandoo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DA77D4A1252559010D65166C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-QuandooTests/Pods-QuandooTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuandooTests/Pods-QuandooTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -330,15 +547,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC31C7B71FBB158600412BD9 /* Address.swift in Sources */,
-				FC31C7D01FBB335700412BD9 /* Data+Posts.swift in Sources */,
 				FC31C7B11FBB074C00412BD9 /* User.swift in Sources */,
+				FC31C7F91FBC5B3B00412BD9 /* Requests.swift in Sources */,
 				FC31C79D1FBAFB0C00412BD9 /* UserListViewController.swift in Sources */,
 				FC31C7AE1FBB072E00412BD9 /* PostListViewController.swift in Sources */,
 				FC31C79B1FBAFB0C00412BD9 /* AppDelegate.swift in Sources */,
 				FC31C7CC1FBB2AF800412BD9 /* UIColor+Hex.swift in Sources */,
 				FC31C7D41FBB367C00412BD9 /* PostCell.swift in Sources */,
 				FC31C7C71FBB1EB100412BD9 /* UserCell.swift in Sources */,
-				FC31C7CA1FBB215600412BD9 /* Data+Users.swift in Sources */,
 				FC31C7B31FBB075F00412BD9 /* Post.swift in Sources */,
 				FC31C7BA1FBB172400412BD9 /* Errors.swift in Sources */,
 				FC31C7BC1FBB1A6800412BD9 /* Company.swift in Sources */,
@@ -346,7 +562,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FC31C7D71FBB462A00412BD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC31C7DE1FBB462A00412BD9 /* QuandooUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC31C7E51FBB4D3900412BD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC31C7EC1FBB4D3900412BD9 /* QuandooTests.swift in Sources */,
+				FCED6C6B1FBCA7DE00CCBE18 /* Request.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FC31C7E11FBB462A00412BD9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC31C7961FBAFB0C00412BD9 /* Quandoo */;
+			targetProxy = FC31C7E01FBB462A00412BD9 /* PBXContainerItemProxy */;
+		};
+		FC31C7EF1FBB4D3900412BD9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC31C7961FBAFB0C00412BD9 /* Quandoo */;
+			targetProxy = FC31C7EE1FBB4D3900412BD9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FC31C79E1FBAFB0C00412BD9 /* Main.storyboard */ = {
@@ -487,7 +733,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cedric.Quandoo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -503,7 +749,71 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cedric.Quandoo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		FC31C7E31FBB462A00412BD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 847P2LXN5F;
+				INFOPLIST_FILE = QuandooUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cedric.QuandooUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Quandoo;
+			};
+			name = Debug;
+		};
+		FC31C7E41FBB462A00412BD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 847P2LXN5F;
+				INFOPLIST_FILE = QuandooUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cedric.QuandooUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Quandoo;
+			};
+			name = Release;
+		};
+		FC31C7F11FBB4D3900412BD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5ADB7E8A9AE54710EC29FCC2 /* Pods-QuandooTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 847P2LXN5F;
+				INFOPLIST_FILE = QuandooTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cedric.QuandooTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quandoo.app/Quandoo";
+			};
+			name = Debug;
+		};
+		FC31C7F21FBB4D3900412BD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B31C3020EDA4ADB72131729 /* Pods-QuandooTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 847P2LXN5F;
+				INFOPLIST_FILE = QuandooTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cedric.QuandooTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quandoo.app/Quandoo";
 			};
 			name = Release;
 		};
@@ -524,6 +834,24 @@
 			buildConfigurations = (
 				FC31C7AA1FBAFB0C00412BD9 /* Debug */,
 				FC31C7AB1FBAFB0C00412BD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC31C7E21FBB462A00412BD9 /* Build configuration list for PBXNativeTarget "QuandooUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC31C7E31FBB462A00412BD9 /* Debug */,
+				FC31C7E41FBB462A00412BD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC31C7F01FBB4D3900412BD9 /* Build configuration list for PBXNativeTarget "QuandooTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC31C7F11FBB4D3900412BD9 /* Debug */,
+				FC31C7F21FBB4D3900412BD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

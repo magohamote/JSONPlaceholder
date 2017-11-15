@@ -1,0 +1,6 @@
+framework module Pods_QuandooTests {
+  umbrella header "Pods-QuandooTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
