@@ -20,5 +20,6 @@ class UserCell: UITableViewCell {
         self.usernameLabel.text = username
         self.emailLabel.text = email
         self.addressLabel.text = "\(address.street), \(address.suite)\n\(address.zipcode) \(address.city)"
+        self.nameLabel.adjustsFontSizeToFitWidth = true
     }
 }

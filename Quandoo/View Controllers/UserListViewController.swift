@@ -35,9 +35,10 @@ class UserListViewController: UITableViewController {
 
     // MARK: - Data MGMT
     @objc private func downloadUsers() {
-        Requests.shared().downloadUsers(completion: { users, error in
+        Request.shared().downloadData(url: "https://jsonplaceholder.typicode.com/users", completion: { users, error in
             if let users = users {
                 self.usersArray.removeAll()
+                
                 for user in users {
                     do {
                         try self.usersArray.append(User(json: user))
@@ -47,10 +48,12 @@ class UserListViewController: UITableViewController {
                     }
                 }
                 self.tableView.reloadData()
+                
             } else {
                 print("Error: \(error!)")
                 self.showError()
             }
+            
             self.hideLoadingView()
         })
     }
@@ -60,6 +63,7 @@ class UserListViewController: UITableViewController {
         return usersArray.count
     }
     
+    // MAKR: - UITableViewDelegate
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = self.tableView.dequeueReusableCell(withIdentifier: "userCell") as? UserCell {
             let user = usersArray[indexPath.row]
@@ -72,9 +76,11 @@ class UserListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "PostListViewController") as? PostListViewController {
+            
             let user = usersArray[indexPath.row]
             vc.username = user.username
             vc.userId = user.id
+            
             self.navigationController?.pushViewController(vc, animated: true)
             self.tableView.deselectRow(at: indexPath, animated: true)
         }
@@ -89,6 +95,7 @@ class UserListViewController: UITableViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    // MARK: - Loading
     func showLoadingView() {
         loadingView = UIView(frame: self.view.bounds)
         loadingView.backgroundColor = .black

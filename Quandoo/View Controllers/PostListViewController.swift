@@ -44,12 +44,14 @@ class PostListViewController: UITableViewController {
     // MARK: - Data MGMT
     @objc func downloadUsersPost() {
         guard let userId = self.userId else {
+            self.showError()
             return
         }
         
-        Requests.shared().downloadUsersPosts(userId: userId, completion: { posts, error in
+        Request.shared().downloadData(url: "https://jsonplaceholder.typicode.com/posts?userId=", userId: userId, completion: { posts, error in
             if let posts = posts {
                 self.postsArray.removeAll()
+                
                 for post in posts {
                     do {
                         try self.postsArray.append(Post(json: post))
@@ -59,8 +61,10 @@ class PostListViewController: UITableViewController {
                     }
                 }
                 self.tableView.reloadData()
+                
             } else {
-                print(error!)
+                print("Error: \(error!)")
+                self.showError()
             }
             self.hideLoadingView()
         })
@@ -71,6 +75,7 @@ class PostListViewController: UITableViewController {
         return postsArray.count
     }
     
+    // MAKR: - UITableViewDelegate
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "postCell") as? PostCell {
             let post = postsArray[indexPath.row]
@@ -93,6 +98,7 @@ class PostListViewController: UITableViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    // MARK: - Loading
     func showLoadingView() {
         loadingView = UIView(frame: self.view.bounds)
         loadingView.backgroundColor = .black

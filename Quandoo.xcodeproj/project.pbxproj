@@ -30,8 +30,8 @@
 		FC31C7D41FBB367C00412BD9 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C7D31FBB367C00412BD9 /* PostCell.swift */; };
 		FC31C7DE1FBB462A00412BD9 /* QuandooUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C7DD1FBB462A00412BD9 /* QuandooUITests.swift */; };
 		FC31C7EC1FBB4D3900412BD9 /* QuandooTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C7EB1FBB4D3900412BD9 /* QuandooTests.swift */; };
-		FC31C7F91FBC5B3B00412BD9 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C7F81FBC5B3B00412BD9 /* Requests.swift */; };
-		FCED6C6B1FBCA7DE00CCBE18 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C7F31FBC4E1700412BD9 /* Request.swift */; };
+		FC31C7F91FBC5B3B00412BD9 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C7F81FBC5B3B00412BD9 /* Request.swift */; };
+		FCED6C6B1FBCA7DE00CCBE18 /* MockRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C7F31FBC4E1700412BD9 /* MockRequest.swift */; };
 		FCED6C6C1FBCA7E500CCBE18 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = FC31C7FA1FBCA15A00412BD9 /* users.json */; };
 		FCED6C6D1FBCA7E500CCBE18 /* badUsersJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = FCED6C651FBCA65D00CCBE18 /* badUsersJSON.json */; };
 		FCED6C701FBCB12C00CCBE18 /* usersWithoutAddress.json in Resources */ = {isa = PBXBuildFile; fileRef = FCED6C6F1FBCB12C00CCBE18 /* usersWithoutAddress.json */; };
@@ -93,8 +93,8 @@
 		FC31C7E91FBB4D3900412BD9 /* QuandooTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuandooTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC31C7EB1FBB4D3900412BD9 /* QuandooTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuandooTests.swift; sourceTree = "<group>"; };
 		FC31C7ED1FBB4D3900412BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FC31C7F31FBC4E1700412BD9 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		FC31C7F81FBC5B3B00412BD9 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		FC31C7F31FBC4E1700412BD9 /* MockRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequest.swift; sourceTree = "<group>"; };
+		FC31C7F81FBC5B3B00412BD9 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		FC31C7FA1FBCA15A00412BD9 /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 		FCED6C651FBCA65D00CCBE18 /* badUsersJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = badUsersJSON.json; sourceTree = "<group>"; };
 		FCED6C6F1FBCB12C00CCBE18 /* usersWithoutAddress.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = usersWithoutAddress.json; sourceTree = "<group>"; };
@@ -252,7 +252,7 @@
 		FC31C7C81FBB212200412BD9 /* Data MGMT */ = {
 			isa = PBXGroup;
 			children = (
-				FC31C7F81FBC5B3B00412BD9 /* Requests.swift */,
+				FC31C7F81FBC5B3B00412BD9 /* Request.swift */,
 			);
 			path = "Data MGMT";
 			sourceTree = "<group>";
@@ -270,7 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				FC31C7EB1FBB4D3900412BD9 /* QuandooTests.swift */,
-				FC31C7F31FBC4E1700412BD9 /* Request.swift */,
+				FC31C7F31FBC4E1700412BD9 /* MockRequest.swift */,
 				FC31C7ED1FBB4D3900412BD9 /* Info.plist */,
 				FC31C7F71FBC56D200412BD9 /* Resources */,
 			);
@@ -548,7 +548,7 @@
 			files = (
 				FC31C7B71FBB158600412BD9 /* Address.swift in Sources */,
 				FC31C7B11FBB074C00412BD9 /* User.swift in Sources */,
-				FC31C7F91FBC5B3B00412BD9 /* Requests.swift in Sources */,
+				FC31C7F91FBC5B3B00412BD9 /* Request.swift in Sources */,
 				FC31C79D1FBAFB0C00412BD9 /* UserListViewController.swift in Sources */,
 				FC31C7AE1FBB072E00412BD9 /* PostListViewController.swift in Sources */,
 				FC31C79B1FBAFB0C00412BD9 /* AppDelegate.swift in Sources */,
@@ -575,7 +575,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC31C7EC1FBB4D3900412BD9 /* QuandooTests.swift in Sources */,
-				FCED6C6B1FBCA7DE00CCBE18 /* Request.swift in Sources */,
+				FCED6C6B1FBCA7DE00CCBE18 /* MockRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -42,10 +42,10 @@ class QuandooTests: XCTestCase {
     
     func testGoodUsersJSON() {
         let data = getTestData(name: "users")
-        Request.response.data = htmlResponse
+        MockRequest.response.data = htmlResponse
         
         do {
-            Request.response.json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
+            MockRequest.response.json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
         } catch {
             print(error)
         }
@@ -68,10 +68,10 @@ class QuandooTests: XCTestCase {
     
     func testGoodPostsJSON() {
         let data = getTestData(name: "posts")
-        Request.response.data = htmlResponse
+        MockRequest.response.data = htmlResponse
         
         do {
-            Request.response.json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
+            MockRequest.response.json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
         } catch {
             print(error)
         }
@@ -92,12 +92,19 @@ class QuandooTests: XCTestCase {
         }
     }
     
+    func testBadURLResquest() {
+        Request.shared().downloadData(url: "badUrl", completion: { data, error in
+            XCTAssertNotNil(error)
+            XCTAssertNil(data)
+        })
+    }
+    
     func testBadUsersJSON() {
         let data = getTestData(name: "badUsersJSON")
-        Request.response.data = htmlResponse
+        MockRequest.response.data = htmlResponse
         
         do {
-            Request.response.json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
+            MockRequest.response.json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
         } catch {
             print(error)
         }
@@ -121,10 +128,10 @@ class QuandooTests: XCTestCase {
     
     func testUsersWithoutAddress() {
         let data = getTestData(name: "usersWithoutAddress")
-        Request.response.data = htmlResponse
+        MockRequest.response.data = htmlResponse
         
         do {
-            Request.response.json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
+            MockRequest.response.json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
         } catch {
             print(error)
         }
@@ -148,10 +155,10 @@ class QuandooTests: XCTestCase {
     
     func testUsersWithBadAddress() {
         let data = getTestData(name: "usersWithBadAddress")
-        Request.response.data = htmlResponse
+        MockRequest.response.data = htmlResponse
         
         do {
-            Request.response.json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
+            MockRequest.response.json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
         } catch {
             print(error)
         }
@@ -175,10 +182,10 @@ class QuandooTests: XCTestCase {
     
     func testBadPostsJSON() {
         let data = getTestData(name: "badPostsJSON")
-        Request.response.data = htmlResponse
+        MockRequest.response.data = htmlResponse
        
         do {
-            Request.response.json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
+            MockRequest.response.json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
         } catch {
             print(error)
         }
@@ -211,8 +218,8 @@ class QuandooTests: XCTestCase {
         method: HTTPMethod = .get,
         parameters: Parameters? = nil,
         encoding: ParameterEncoding = URLEncoding.default,
-        headers: HTTPHeaders? = nil) -> Request {
+        headers: HTTPHeaders? = nil) -> MockRequest {
         
-        return Request(request: url as! String)
+        return MockRequest(request: url as! String)
     }
 }
