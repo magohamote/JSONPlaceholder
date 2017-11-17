@@ -88,35 +88,4 @@ class PostListViewController: UITableViewController {
         }
         return UITableViewCell()
     }
-    
-    // MARK: - Errors
-    func showError() {
-        let alertController = UIAlertController(title: "Error", message: "An error occured while downloading posts", preferredStyle: UIAlertControllerStyle.alert)
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
-        
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    // MARK: - Loading
-    func showLoadingView() {
-        loadingView = UIView(frame: self.view.bounds)
-        loadingView.backgroundColor = .black
-        loadingView.alpha = 0.7
-        
-        let loadingIndicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
-        loadingIndicator.center = loadingView.center
-        loadingIndicator.isHidden = false
-        loadingIndicator.startAnimating()
-        
-        loadingView.addSubview(loadingIndicator)
-        
-        self.view.addSubview(loadingView)
-    }
-    
-    func hideLoadingView() {
-        tableView.separatorColor = UIColor(rgb: 0x25ac72)
-        self.refreshControl?.endRefreshing()
-        self.loadingView.removeFromSuperview()
-    }
 }

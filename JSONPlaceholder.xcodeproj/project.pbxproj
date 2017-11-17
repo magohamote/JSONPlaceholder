@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7588B5D811FDE2DA7756B25B /* Pods_JSONPlaceholder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73F26CAFBFF2EBFF8F7AFA17 /* Pods_JSONPlaceholder.framework */; };
+		82C6A5861FBEEDCA0084DEE5 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C6A5851FBEEDCA0084DEE5 /* UIViewController+Extension.swift */; };
 		F6CBAF3F9DB185A51FBEDC2A /* Pods_JSONPlaceholderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD93BB9A894E4D1B872932D0 /* Pods_JSONPlaceholderTests.framework */; };
 		FC31C79B1FBAFB0C00412BD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C79A1FBAFB0C00412BD9 /* AppDelegate.swift */; };
 		FC31C79D1FBAFB0C00412BD9 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31C79C1FBAFB0C00412BD9 /* UserListViewController.swift */; };
@@ -62,6 +63,7 @@
 		3286D9FC98D7915875AF9694 /* Pods-JSONPlaceholderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONPlaceholderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JSONPlaceholderTests/Pods-JSONPlaceholderTests.release.xcconfig"; sourceTree = "<group>"; };
 		6CC4E7DAE3727610E950E2BE /* Pods-JSONPlaceholder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONPlaceholder.release.xcconfig"; path = "Pods/Target Support Files/Pods-JSONPlaceholder/Pods-JSONPlaceholder.release.xcconfig"; sourceTree = "<group>"; };
 		73F26CAFBFF2EBFF8F7AFA17 /* Pods_JSONPlaceholder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JSONPlaceholder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82C6A5851FBEEDCA0084DEE5 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		A895ABE2825CD45E3E54AE4E /* Pods_QuandooTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuandooTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD93BB9A894E4D1B872932D0 /* Pods_JSONPlaceholderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JSONPlaceholderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D35D343C4B2FD2C6AD14FE50 /* Pods_Quandoo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quandoo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,6 +239,7 @@
 				FC31C7B91FBB172400412BD9 /* Errors.swift */,
 				FC31C7CB1FBB2AF800412BD9 /* UIColor+Hex.swift */,
 				FC31C7D11FBB347000412BD9 /* Label+Height.swift */,
+				82C6A5851FBEEDCA0084DEE5 /* UIViewController+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 				FC31C7B11FBB074C00412BD9 /* User.swift in Sources */,
 				FC31C7F91FBC5B3B00412BD9 /* Request.swift in Sources */,
 				FC31C79D1FBAFB0C00412BD9 /* UserListViewController.swift in Sources */,
+				82C6A5861FBEEDCA0084DEE5 /* UIViewController+Extension.swift in Sources */,
 				FC31C7AE1FBB072E00412BD9 /* PostListViewController.swift in Sources */,
 				FC31C79B1FBAFB0C00412BD9 /* AppDelegate.swift in Sources */,
 				FC31C7CC1FBB2AF800412BD9 /* UIColor+Hex.swift in Sources */,
