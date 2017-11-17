@@ -1,0 +1,6 @@
+framework module Pods_JSONPlaceholder {
+  umbrella header "Pods-JSONPlaceholder-umbrella.h"
+
+  export *
+  module * { export * }
+}

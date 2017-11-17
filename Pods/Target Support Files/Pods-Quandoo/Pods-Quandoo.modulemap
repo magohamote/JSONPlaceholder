@@ -1,6 +1,0 @@
-framework module Pods_Quandoo {
-  umbrella header "Pods-Quandoo-umbrella.h"
-
-  export *
-  module * { export * }
-}
