@@ -8,40 +8,31 @@
 
 import UIKit
 
-class PostListViewController: UITableViewController, PostDataModelDelegate {
+class PostListViewController: UIViewController, PostDataModelDelegate {
+    
+    @IBOutlet var tableView: UITableView!
     
     var username: String?
     var userId: Int?
     
+    private var dataSource = PostDataModel()
     fileprivate var postsArray = [Post](){
         didSet {
             tableView?.reloadData()
         }
     }
-    private var dataSource = PostDataModel()
     
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let username = self.username else {
-            self.showError()
+        guard let username = username else {
+            showError()
             return
         }
         
         title = "\(username)'s posts"
-        navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x25ac72)
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-
-        refreshControl = UIRefreshControl()
-        refreshControl?.addTarget(self, action: #selector(downloadUsersPost), for: .valueChanged)
-        refreshControl?.tintColor = UIColor(rgb: 0x25ac72)
-        refreshControl?.backgroundColor = .white
-        
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 151
-        tableView.separatorColor = .clear
-        
+        setupTableView()
         dataSource.delegate = self
     }
     
@@ -51,35 +42,45 @@ class PostListViewController: UITableViewController, PostDataModelDelegate {
         downloadUsersPost()
     }
     
-    // MARK: - PostDataModelDelegate
-    func didReceiveDataUpdate(posts: [Post]) {
-        postsArray = posts
-        tableView.reloadData()
-        hideLoadingView()
-    }
-    
-    func didFailDataUpdateWithError(error: Error) {
-        hideLoadingView()
-        showError()
+    func setupTableView() {
+        tableView.refreshControl = RefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(downloadUsersPost), for: .valueChanged)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 151
+        tableView.separatorColor = .clear
     }
     
     // MARK: - DataModel
     @objc func downloadUsersPost() {
-        guard let userId = self.userId else {
-            self.showError()
+        guard let userId = userId else {
+            showError()
             return
         }
-        
-        dataSource.requestData(url: "https://jsonplaceholder.typicode.com/posts?userId=", userId: userId)
+        dataSource.requestData(url: "https://jsonplaceholder.typicode.com/posts?userId=\(userId)")
     }
     
-    // MARK: - UITableViewDataSource
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    // MARK: - PostDataModelDelegate
+    func didReceiveDataUpdate(posts: [Post]) {
+        postsArray = posts
+        hideLoadingView(tableView: tableView)
+    }
+    
+    func didFailDataUpdateWithError(error: Error) {
+        hideLoadingView(tableView: tableView)
+        showError()
+    }
+}
+
+extension PostListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return postsArray.count
     }
     
-    // MARK: - UITableViewDelegate
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: PostCell.identifier) as? PostCell {
             cell.config(post: postsArray[indexPath.row])
             cell.layoutIfNeeded()
@@ -88,3 +89,5 @@ class PostListViewController: UITableViewController, PostDataModelDelegate {
         return UITableViewCell()
     }
 }
+
+extension PostListViewController: UITableViewDelegate {}

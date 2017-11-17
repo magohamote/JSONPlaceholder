@@ -8,8 +8,10 @@
 
 import UIKit
 
-class UserListViewController: UITableViewController, UserDataModelDelegate {
+class UserListViewController: UIViewController, UserDataModelDelegate {
 
+    @IBOutlet var tableView: UITableView!
+    
     fileprivate var usersArray = [User](){
         didSet {
             tableView?.reloadData()
@@ -22,27 +24,27 @@ class UserListViewController: UITableViewController, UserDataModelDelegate {
         super.viewDidLoad()
         
         title = "Users"
-        navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x25ac72)
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.tintColor = .white
-        
-        refreshControl = UIRefreshControl()
-        refreshControl?.addTarget(self, action: #selector(downloadUsers), for: .valueChanged)
-        refreshControl?.tintColor = UIColor(rgb: 0x25ac72)
-        refreshControl?.backgroundColor = .white
-        
-        tableView.separatorColor = .clear
-        
+        setupTableView()
         dataSource.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.showLoadingView()
+        showLoadingView()
         downloadUsers()
     }
 
-    // MARK: - Data MGMT
+    func setupTableView() {
+        tableView.refreshControl = RefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(downloadUsers), for: .valueChanged)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.separatorColor = .clear
+    }
+    
+    // MARK: - DataModel
     @objc private func downloadUsers() {
         dataSource.requestData(url: "https://jsonplaceholder.typicode.com/users")
     }
@@ -50,37 +52,39 @@ class UserListViewController: UITableViewController, UserDataModelDelegate {
     // MARK: - UserDataModelDelegate
     func didReceiveDataUpdate(users: [User]) {
         usersArray = users
-        hideLoadingView()
+        hideLoadingView(tableView: tableView)
     }
     
     func didFailDataUpdateWithError(error: Error) {
-        hideLoadingView()
+        hideLoadingView(tableView: tableView)
         showError()
     }
-    
-    // MARK: - UITableViewDataSource
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+}
+
+extension UserListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return usersArray.count
     }
     
-    // MARK: - UITableViewDelegate
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = self.tableView.dequeueReusableCell(withIdentifier: UserCell.identifier) as? UserCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: UserCell.identifier) as? UserCell {
             cell.config(user: usersArray[indexPath.row])
             return cell
         }
         
         return UITableViewCell()
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+}
+
+extension UserListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "PostListViewController") as? PostListViewController {
             
             vc.username = usersArray[indexPath.row].username
             vc.userId = usersArray[indexPath.row].id
             
             navigationController?.pushViewController(vc, animated: true)
-            self.tableView.deselectRow(at: indexPath, animated: true)
+            tableView.deselectRow(at: indexPath, animated: true)
         }
     }
 }

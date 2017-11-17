@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7588B5D811FDE2DA7756B25B /* Pods_JSONPlaceholder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73F26CAFBFF2EBFF8F7AFA17 /* Pods_JSONPlaceholder.framework */; };
+		829244AF1FBF43F2004C7A9D /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829244AE1FBF43F2004C7A9D /* NavigationController.swift */; };
+		829244B11FBF46F6004C7A9D /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829244B01FBF46F6004C7A9D /* RefreshControl.swift */; };
 		82C6A5861FBEEDCA0084DEE5 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C6A5851FBEEDCA0084DEE5 /* UIViewController+Extension.swift */; };
 		82C6A5881FBF119E0084DEE5 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C6A5871FBF119E0084DEE5 /* UserDataModel.swift */; };
 		82C6A58A1FBF11A90084DEE5 /* PostDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C6A5891FBF11A90084DEE5 /* PostDataModel.swift */; };
@@ -64,6 +66,8 @@
 		3286D9FC98D7915875AF9694 /* Pods-JSONPlaceholderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONPlaceholderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JSONPlaceholderTests/Pods-JSONPlaceholderTests.release.xcconfig"; sourceTree = "<group>"; };
 		6CC4E7DAE3727610E950E2BE /* Pods-JSONPlaceholder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONPlaceholder.release.xcconfig"; path = "Pods/Target Support Files/Pods-JSONPlaceholder/Pods-JSONPlaceholder.release.xcconfig"; sourceTree = "<group>"; };
 		73F26CAFBFF2EBFF8F7AFA17 /* Pods_JSONPlaceholder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JSONPlaceholder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		829244AE1FBF43F2004C7A9D /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		829244B01FBF46F6004C7A9D /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		82C6A5851FBEEDCA0084DEE5 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		82C6A5871FBF119E0084DEE5 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		82C6A5891FBF11A90084DEE5 /* PostDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDataModel.swift; sourceTree = "<group>"; };
@@ -242,6 +246,8 @@
 				FC31C7CB1FBB2AF800412BD9 /* UIColor+Hex.swift */,
 				FC31C7D11FBB347000412BD9 /* Label+Height.swift */,
 				82C6A5851FBEEDCA0084DEE5 /* UIViewController+Extension.swift */,
+				829244AE1FBF43F2004C7A9D /* NavigationController.swift */,
+				829244B01FBF46F6004C7A9D /* RefreshControl.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -559,12 +565,14 @@
 				FC31C7B71FBB158600412BD9 /* Address.swift in Sources */,
 				82C6A5881FBF119E0084DEE5 /* UserDataModel.swift in Sources */,
 				FC31C7B11FBB074C00412BD9 /* User.swift in Sources */,
+				829244B11FBF46F6004C7A9D /* RefreshControl.swift in Sources */,
 				FC31C79D1FBAFB0C00412BD9 /* UserListViewController.swift in Sources */,
 				82C6A5861FBEEDCA0084DEE5 /* UIViewController+Extension.swift in Sources */,
 				FC31C7AE1FBB072E00412BD9 /* PostListViewController.swift in Sources */,
 				FC31C79B1FBAFB0C00412BD9 /* AppDelegate.swift in Sources */,
 				FC31C7CC1FBB2AF800412BD9 /* UIColor+Hex.swift in Sources */,
 				FC31C7D41FBB367C00412BD9 /* PostCell.swift in Sources */,
+				829244AF1FBF43F2004C7A9D /* NavigationController.swift in Sources */,
 				FC31C7C71FBB1EB100412BD9 /* UserCell.swift in Sources */,
 				FC31C7B31FBB075F00412BD9 /* Post.swift in Sources */,
 				FC31C7BA1FBB172400412BD9 /* Errors.swift in Sources */,

@@ -18,8 +18,8 @@ class PostDataModel {
     
     weak var delegate: PostDataModelDelegate?
     
-    func requestData(url: String, userId: Int) {
-        Alamofire.request("\(url)\(userId)").responseJSON { response in
+    func requestData(url: String) {
+        Alamofire.request(url).responseJSON { response in
             guard response.result.isSuccess else {
                 if let error = response.result.error {
                     print("Error while fetching data: \(error)")

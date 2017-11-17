@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UITableViewController {
+extension UIViewController {
     
     // MARK: - Errors
     func showError() {
@@ -37,9 +37,9 @@ extension UITableViewController {
         self.view.addSubview(loadingView)
     }
     
-    func hideLoadingView() {
-        self.tableView.separatorColor = UIColor(rgb: 0x25ac72)
-        self.refreshControl?.endRefreshing()
+    func hideLoadingView(tableView: UITableView) {
+        tableView.separatorColor = UIColor(rgb: 0x25ac72)
+        tableView.refreshControl?.endRefreshing()
         self.view.viewWithTag(42)?.removeFromSuperview()
     }
 }
