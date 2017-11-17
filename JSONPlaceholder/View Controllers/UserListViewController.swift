@@ -8,54 +8,54 @@
 
 import UIKit
 
-class UserListViewController: UITableViewController {
+class UserListViewController: UITableViewController, UserDataModelDelegate {
 
-    var usersArray:[User] = []
-    private var loadingView:UIView!
+    fileprivate var usersArray = [User](){
+        didSet {
+            tableView?.reloadData()
+        }
+    }
+    private let dataSource = UserDataModel()
     
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Users"
-        self.navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x25ac72)
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-        self.navigationController?.navigationBar.tintColor = .white
+        title = "Users"
+        navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x25ac72)
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.tintColor = .white
         
-        self.refreshControl = UIRefreshControl()
-        self.refreshControl?.addTarget(self, action: #selector(downloadUsers), for: .valueChanged)
-        self.refreshControl?.tintColor = UIColor(rgb: 0x25ac72)
-        self.refreshControl?.backgroundColor = .white
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(downloadUsers), for: .valueChanged)
+        refreshControl?.tintColor = UIColor(rgb: 0x25ac72)
+        refreshControl?.backgroundColor = .white
         
-        self.tableView.separatorColor = .clear
+        tableView.separatorColor = .clear
         
-        showLoadingView()
+        dataSource.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.showLoadingView()
         downloadUsers()
     }
 
     // MARK: - Data MGMT
     @objc private func downloadUsers() {
-        Request.shared().downloadData(url: "https://jsonplaceholder.typicode.com/users", completion: { users, error in
-            if let users = users {
-                self.usersArray.removeAll()
-                
-                for user in users {
-                    do {
-                        try self.usersArray.append(User(json: user))
-                    } catch {
-                        print("An error occured while downloading users")
-                        self.showError()
-                    }
-                }
-                self.tableView.reloadData()
-                
-            } else {
-                print("Error: \(error!)")
-                self.showError()
-            }
-            
-            self.hideLoadingView()
-        })
+        dataSource.requestData(url: "https://jsonplaceholder.typicode.com/users")
+    }
+    
+    // MARK: - UserDataModelDelegate
+    func didReceiveDataUpdate(users: [User]) {
+        usersArray = users
+        hideLoadingView()
+    }
+    
+    func didFailDataUpdateWithError(error: Error) {
+        hideLoadingView()
+        showError()
     }
     
     // MARK: - UITableViewDataSource
@@ -63,11 +63,10 @@ class UserListViewController: UITableViewController {
         return usersArray.count
     }
     
-    // MAKR: - UITableViewDelegate
+    // MARK: - UITableViewDelegate
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = self.tableView.dequeueReusableCell(withIdentifier: "userCell") as? UserCell {
-            let user = usersArray[indexPath.row]
-            cell.config(name: user.name, username: user.username, email: user.email, address: user.address)
+        if let cell = self.tableView.dequeueReusableCell(withIdentifier: UserCell.identifier) as? UserCell {
+            cell.config(user: usersArray[indexPath.row])
             return cell
         }
         
@@ -75,13 +74,12 @@ class UserListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "PostListViewController") as? PostListViewController {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "PostListViewController") as? PostListViewController {
             
-            let user = usersArray[indexPath.row]
-            vc.username = user.username
-            vc.userId = user.id
+            vc.username = usersArray[indexPath.row].username
+            vc.userId = usersArray[indexPath.row].id
             
-            self.navigationController?.pushViewController(vc, animated: true)
+            navigationController?.pushViewController(vc, animated: true)
             self.tableView.deselectRow(at: indexPath, animated: true)
         }
     }

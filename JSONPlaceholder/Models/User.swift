@@ -18,19 +18,20 @@ class User: NSObject {
     var website: String?
     var company: Company?
     
-    init(json: [String : Any]?) throws {
+    init?(json: [String : Any]?) {
         if let id = json?["id"] as? Int,
            let name = json?["name"] as? String,
            let username = json?["username"] as? String,
            let email = json?["email"] as? String,
-           let address = json?["address"] as? [String: Any] {
+           let addressData = json?["address"] as? [String: Any],
+           let address = Address(json: addressData){
             self.id = id
             self.name = name
             self.username = username
             self.email = email
-            try self.address = Address(json: address)
+            self.address = address
         } else {
-            throw FormatError.badFormatError
+            return nil
         }
         
         self.phone = json?["phone"] as? String

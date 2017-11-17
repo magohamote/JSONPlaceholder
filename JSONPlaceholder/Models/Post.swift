@@ -14,7 +14,7 @@ class Post: NSObject {
     var title: String
     var body: String
     
-    init(json: [String : Any]?) throws {
+    init?(json: [String : Any]?) {
         if let userId = json?["userId"] as? Int,
            let title = json?["title"] as? String,
            let body = json?["body"] as? String {
@@ -22,7 +22,7 @@ class Post: NSObject {
             self.title = title
             self.body = body
         } else {
-            throw FormatError.badFormatError
+            return nil
         }
         
         self.id = json?["id"] as? Int

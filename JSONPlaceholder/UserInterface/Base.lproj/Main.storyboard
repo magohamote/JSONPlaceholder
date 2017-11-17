@@ -24,7 +24,7 @@
         <!--User List View Controller-->
         <scene sceneID="e73-vf-qIS">
             <objects>
-                <tableViewController storyboardIdentifier="UserListViewController" id="qTp-N1-ypn" customClass="UserListViewController" customModule="Quandoo" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="UserListViewController" id="qTp-N1-ypn" customClass="UserListViewController" customModule="JSONPlaceholder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yLf-vG-uGg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,7 +32,7 @@
                         <color key="separatorColor" red="0.0" green="0.75657788209999999" blue="0.60511756750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="userCell" rowHeight="128" id="9bz-8X-z7H" customClass="UserCell" customModule="Quandoo" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" rowHeight="128" id="9bz-8X-z7H" customClass="UserCell" customModule="JSONPlaceholder" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="128"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9bz-8X-z7H" id="LKE-wF-Ild">
@@ -110,7 +110,7 @@
         <!--Post List View Controller-->
         <scene sceneID="WDq-iG-5U9">
             <objects>
-                <tableViewController storyboardIdentifier="PostListViewController" id="M3P-Cv-MPR" customClass="PostListViewController" customModule="Quandoo" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="PostListViewController" id="M3P-Cv-MPR" customClass="PostListViewController" customModule="JSONPlaceholder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cyx-XL-f2y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -118,7 +118,7 @@
                         <color key="separatorColor" red="0.0" green="0.75657788209999999" blue="0.60511756750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="68" id="Pjq-0D-l8I" customClass="PostCell" customModule="Quandoo" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="68" id="Pjq-0D-l8I" customClass="PostCell" customModule="JSONPlaceholder" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pjq-0D-l8I" id="imQ-jH-oqQ">

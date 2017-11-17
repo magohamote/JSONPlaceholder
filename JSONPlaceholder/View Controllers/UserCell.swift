@@ -15,11 +15,15 @@ class UserCell: UITableViewCell {
     @IBOutlet var emailLabel: UILabel!
     @IBOutlet var addressLabel: UILabel!
     
-    func config(name: String, username: String, email: String, address: Address) {
-        self.nameLabel.text = name
-        self.usernameLabel.text = username
-        self.emailLabel.text = email
-        self.addressLabel.text = "\(address.street), \(address.suite)\n\(address.zipcode) \(address.city)"
+    class var identifier: String {
+        return String(describing: self)
+    }
+    
+    func config(user: User) {
+        self.nameLabel.text = user.name
+        self.usernameLabel.text = user.username
+        self.emailLabel.text = user.email
+        self.addressLabel.text = "\(user.address.street), \(user.address.suite)\n\(user.address.zipcode) \(user.address.city)"
         self.nameLabel.adjustsFontSizeToFitWidth = true
     }
 }

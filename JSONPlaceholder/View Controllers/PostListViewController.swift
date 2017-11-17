@@ -8,12 +8,17 @@
 
 import UIKit
 
-class PostListViewController: UITableViewController {
+class PostListViewController: UITableViewController, PostDataModelDelegate {
     
     var username: String?
     var userId: Int?
-    var loadingView:UIView!
-    var postsArray:[Post] = []
+    
+    fileprivate var postsArray = [Post](){
+        didSet {
+            tableView?.reloadData()
+        }
+    }
+    private var dataSource = PostDataModel()
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -24,50 +29,48 @@ class PostListViewController: UITableViewController {
             return
         }
         
-        self.title = "\(username)'s posts"
-        self.navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x25ac72)
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        title = "\(username)'s posts"
+        navigationController?.navigationBar.barTintColor = UIColor(rgb: 0x25ac72)
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
 
-        self.refreshControl = UIRefreshControl()
-        self.refreshControl?.addTarget(self, action: #selector(downloadUsersPost), for: .valueChanged)
-        self.refreshControl?.tintColor = UIColor(rgb: 0x25ac72)
-        self.refreshControl?.backgroundColor = .white
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(downloadUsersPost), for: .valueChanged)
+        refreshControl?.tintColor = UIColor(rgb: 0x25ac72)
+        refreshControl?.backgroundColor = .white
         
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = 151
-        self.tableView.separatorColor = .clear
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 151
+        tableView.separatorColor = .clear
         
+        dataSource.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         showLoadingView()
         downloadUsersPost()
     }
     
-    // MARK: - Data MGMT
+    // MARK: - PostDataModelDelegate
+    func didReceiveDataUpdate(posts: [Post]) {
+        postsArray = posts
+        tableView.reloadData()
+        hideLoadingView()
+    }
+    
+    func didFailDataUpdateWithError(error: Error) {
+        hideLoadingView()
+        showError()
+    }
+    
+    // MARK: - DataModel
     @objc func downloadUsersPost() {
         guard let userId = self.userId else {
             self.showError()
             return
         }
         
-        Request.shared().downloadData(url: "https://jsonplaceholder.typicode.com/posts?userId=", userId: userId, completion: { posts, error in
-            if let posts = posts {
-                self.postsArray.removeAll()
-                
-                for post in posts {
-                    do {
-                        try self.postsArray.append(Post(json: post))
-                    } catch {
-                        print("An error occured while downloading posts")
-                        self.showError()
-                    }
-                }
-                self.tableView.reloadData()
-                
-            } else {
-                print("Error: \(error!)")
-                self.showError()
-            }
-            self.hideLoadingView()
-        })
+        dataSource.requestData(url: "https://jsonplaceholder.typicode.com/posts?userId=", userId: userId)
     }
     
     // MARK: - UITableViewDataSource
@@ -75,15 +78,11 @@ class PostListViewController: UITableViewController {
         return postsArray.count
     }
     
-    // MAKR: - UITableViewDelegate
+    // MARK: - UITableViewDelegate
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "postCell") as? PostCell {
-            let post = postsArray[indexPath.row]
-            
-            cell.config(title: post.title, body: post.body)
-            
+        if let cell = tableView.dequeueReusableCell(withIdentifier: PostCell.identifier) as? PostCell {
+            cell.config(post: postsArray[indexPath.row])
             cell.layoutIfNeeded()
-            
             return cell
         }
         return UITableViewCell()

@@ -25,7 +25,7 @@ class Address: NSObject {
     var zipcode: String
     var geo: Geo?
     
-    init(json: [String : Any]?) throws {
+    init?(json: [String : Any]?) {
         if let street = json?["street"] as? String,
            let suite = json?["suite"] as? String,
            let city = json?["city"] as? String,
@@ -35,7 +35,7 @@ class Address: NSObject {
             self.city = city
             self.zipcode = zipcode
         } else {
-            throw FormatError.badFormatError
+            return nil
         }
         
         self.geo = Geo(json: json?["geo"] as? [String: Any])
