@@ -1,2 +1,2 @@
-# Quandoo
-interview task
+# JSONPlaceholder
+JSONPlaceholder iOS App sample
