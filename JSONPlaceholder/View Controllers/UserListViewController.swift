@@ -12,7 +12,7 @@ class UserListViewController: UIViewController, UserDataModelDelegate {
 
     @IBOutlet var tableView: UITableView!
     
-    fileprivate var usersArray = [User](){
+    internal var usersArray = [User](){
         didSet {
             tableView?.reloadData()
         }

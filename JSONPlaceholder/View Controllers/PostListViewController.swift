@@ -16,7 +16,7 @@ class PostListViewController: UIViewController, PostDataModelDelegate {
     var userId: Int?
     
     private var dataSource = PostDataModel()
-    fileprivate var postsArray = [Post](){
+    internal var postsArray = [Post](){
         didSet {
             tableView?.reloadData()
         }

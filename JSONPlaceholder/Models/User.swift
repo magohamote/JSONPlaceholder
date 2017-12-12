@@ -24,7 +24,7 @@ class User: NSObject {
            let username = json?["username"] as? String,
            let email = json?["email"] as? String,
            let addressData = json?["address"] as? [String: Any],
-           let address = Address(json: addressData){
+           let address = Address(json: addressData) {
             self.id = id
             self.name = name
             self.username = username

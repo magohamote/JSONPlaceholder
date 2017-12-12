@@ -53,11 +53,8 @@ class JSONPlaceholderTests: XCTestCase {
         _ = request("dummyURL").responseJSON { (request, response, JSON, error) -> Void in
             if let users = JSON as? [[String: Any]]{
                 for user in users {
-                    do {
-                        try userListVC.usersArray.append(User(json: user))
-                    } catch {
-                        print("error")
-                        userListVC.showError()
+                    if let user = User(json: user) {
+                        userListVC.usersArray.append(user)
                     }
                 }
                 
@@ -79,11 +76,8 @@ class JSONPlaceholderTests: XCTestCase {
         _ = request("dummyURL").responseJSON { (request, response, JSON, error) -> Void in
             if let posts = JSON as? [[String: Any]]{
                 for post in posts {
-                    do {
-                        try postListVC.postsArray.append(Post(json: post))
-                    } catch {
-                        print("error")
-                        postListVC.showError()
+                    if let post = Post(json: post) {
+                        postListVC.postsArray.append(post)
                     }
                 }
                 
@@ -166,13 +160,7 @@ class JSONPlaceholderTests: XCTestCase {
         _ = request("dummyURL").responseJSON { (request, response, JSON, error) -> Void in
             if let users = JSON as? [[String: Any]]{
                 for user in users {
-                    do {
-                        try userListVC.usersArray.append(User(json: user))
-                        XCTAssertThrowsError(FormatError.badFormatError)
-                    } catch {
-                        print("error")
-                        userListVC.showError()
-                    }
+                    XCTAssertNil(User(json: user))
                 }
                 
                 XCTAssertEqual(userListVC.usersArray.count, 0)
@@ -193,13 +181,7 @@ class JSONPlaceholderTests: XCTestCase {
         _ = request("dummyURL").responseJSON { (request, response, JSON, error) -> Void in
             if let posts = JSON as? [[String: Any]]{
                 for post in posts {
-                    do {
-                        try postListVC.postsArray.append(Post(json: post))
-                        XCTAssertThrowsError(FormatError.badFormatError)
-                    } catch {
-                        print("error")
-                        postListVC.showError()
-                    }
+                    XCTAssertNil(Post(json: post))
                 }
                 
                 XCTAssertEqual(postListVC.postsArray.count, 0)
